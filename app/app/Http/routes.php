@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('home.index');
 });
+
+// Registration Routes...
+Route::get('register', 'Auth\AuthController@getRegister');
+Route::post('register', 'Auth\AuthController@postRegister');
+

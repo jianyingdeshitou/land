@@ -14,8 +14,11 @@ class RouteRootTest extends TestCase
     public function testRouteRoot()
     {
         $this->visit('/')
-             ->see('guest')
-             ->seeLink('Login')
-             ->seeLink('Register');
+             ->seeLink('Register')
+             ->click('Register')
+             ->seePageIs('/register');
+
+        $this->visit('/')
+             ->seeLink('Login');
     }
 }
