@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 // Registration Routes...
-Route::get('register', 'Auth\AuthController@getRegister');
+Route::get('register', 'Auth\AuthController@getRegister')->name('auth.register');
 Route::post('register', 'Auth\AuthController@postRegister');
 

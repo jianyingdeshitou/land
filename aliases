@@ -13,8 +13,7 @@ alias cps='docker exec -it $DEVC composer'
 alias cps-dal='cps dump-autoload'
 
 alias artisan='docker exec -it $DEVC php artisan'
-alias ats='docker exec $DEVC php artisan'
-alias ats-mgt='ats migrate'
+alias tinker='artisan tinker'
 
 alias nginx='docker exec $WEBC nginx'
 
