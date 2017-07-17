@@ -16,7 +16,7 @@ class RouteRootTest extends TestCase
         $this->visit('/')
              ->seeLink('Register')
              ->click('Register')
-             ->seePageIs('/register');
+             ->seePageIs(route('auth.register'));
 
         $this->visit('/')
              ->seeLink('Login');
