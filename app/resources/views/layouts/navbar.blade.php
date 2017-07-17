@@ -11,9 +11,9 @@
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
                 <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li>{!! link_to_route('auth.register', $title = 'Register') !!}</a></li>
             @else
-                {{ Auth::user()->name() }}
+                <li class="navbar-text">{{ Auth::user()->name }}</li>
                 <li><a href="/logout">Logout</a></li>
             @endif
         </ul>

@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+@include('layouts.errors')
+
 {!! Form::open(['route' => 'auth.register']) !!}
 
 @include('auth.forms.register')

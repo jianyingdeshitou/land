@@ -13,6 +13,12 @@ class RouteAuthTest extends TestCase
      */
     public function testRegister()
     {
-        $this->visit(route('auth.register'));
+        $this->visit(route('auth.register'))
+            ->see('Register')
+            ->type('Taylor', 'name')
+            ->type('123456', 'password')
+            ->type('123456', 'password_confirmation')
+            ->press('Register')
+            ->seePageIs('/');
     }
 }

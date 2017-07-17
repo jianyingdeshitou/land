@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@extends('layouts.navbar')
+@include('layouts.navbar')
 
 @section('header')
 <h2>home</h2>
