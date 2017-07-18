@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RouteAuthTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
      * A basic test example.
      *
@@ -13,11 +15,18 @@ class RouteAuthTest extends TestCase
      */
     public function testRegister()
     {
+        $this->registerAUser('Taylor', '123456', '123456');
+        $this->registerAUser('Taylor2', '123456', '123456');
+
+    }
+
+    private function registerAUser($name, $password, $password_confirmation)
+    {
         $this->visit(route('auth.register'))
             ->see('Register')
-            ->type('Taylor', 'name')
-            ->type('123456', 'password')
-            ->type('123456', 'password_confirmation')
+            ->type($name, 'name')
+            ->type($password, 'password')
+            ->type($password_confirmation, 'password_confirmation')
             ->press('Register')
             ->seePageIs('/');
     }
